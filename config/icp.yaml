@@ -1,0 +1,62 @@
+# Ideal Customer Profile (ICP) used by LeadLens fit scoring.
+# Edit freely — every weight is explained in the UI's "Why this score?" panel.
+# Default profile: SMB acquisition targets for a searcher / ETA buyer.
+
+name: "SMB acquisition targets (ETA / search fund)"
+
+# Component weights (should sum to 100)
+weights:
+  industry_fit: 25
+  geography_fit: 10
+  size_fit: 20           # employees + revenue bands
+  contact_quality: 25    # verified email / phone / owner name
+  web_presence: 10       # reachable site, description, socials
+  data_completeness: 10
+
+# Industries to prioritise (case-insensitive substring match). Score is full for
+# "target", partial for "adjacent", zero otherwise.
+industries:
+  target:
+    - hvac
+    - plumbing
+    - electrical
+    - landscaping
+    - home services
+    - manufacturing
+    - logistics
+    - healthcare services
+    - dental
+    - veterinary
+    - accounting
+    - it services
+    - managed services
+    - software
+    - saas
+  adjacent:
+    - construction
+    - consulting
+    - marketing
+    - staffing
+    - insurance
+    - real estate
+    - education
+    - automotive
+  exclude:               # hard zero for industry_fit
+    - crypto
+    - gambling
+    - adult
+
+geography:
+  target_countries: ["united states", "usa", "us", "canada"]
+  target_states: []      # e.g. ["texas", "florida"]; empty = any
+
+size:
+  employees_min: 10
+  employees_max: 200
+  revenue_min: 1000000   # USD
+  revenue_max: 30000000
+
+# Minimum score to be labelled "Hot" / "Warm"
+tiers:
+  hot: 75
+  warm: 50

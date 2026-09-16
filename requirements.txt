@@ -1,0 +1,20 @@
+pandas>=1.5,<2.3
+numpy<2
+httpx>=0.24
+beautifulsoup4>=4.12
+lxml>=4.9
+email-validator>=2.0
+dnspython>=2.3
+phonenumbers>=8.13
+rapidfuzz>=3.0
+pydantic>=2.0
+PyYAML>=6.0
+streamlit>=1.28,<1.40
+fastapi>=0.100
+uvicorn>=0.23
+python-multipart>=0.0.6
+openpyxl>=3.1
+pytest>=7.0
+tldextract>=5.0
+jupyter>=1.0          # optional: notebooks/demo.ipynb
+matplotlib>=3.7        # optional: notebook chart
